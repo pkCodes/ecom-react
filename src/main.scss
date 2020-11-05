@@ -1,22 +1,13 @@
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/alert";
+@import "./styles/normalize";
+
+@import "./styles/bootstrap";
 
 @import "./styles/fonts/Roboto/style";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./styles/constants";
 
-body {
-  font-family: "Roboto-Regular", sans-serif;
-  font-weight: 900;
-}
+@import "./styles/app";
 
-#app {
-  color: red;
-}
+@import "./styles/pages";
+
+@import "./styles/components";
