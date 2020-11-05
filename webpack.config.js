@@ -10,6 +10,7 @@ const SRC_DIR = path.resolve(CWD, "src");
 const DIST_DIR = path.resolve(CWD, "dist");
 const isProd = process.env.NODE_ENV === "production";
 const devServerPort = parseInt(process.env.APP_PORT, 10) || 3000;
+const proxyTarget = process.env.API_PROXY;
 
 module.exports = {
   mode: isProd ? "production" : "development",
@@ -68,7 +69,14 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: DIST_DIR,
     port: devServerPort,
+    contentBase: DIST_DIR,
+    historyApiFallback: true,
+    proxy: {
+      "/api": {
+        target: proxyTarget,
+        pathRewrite: { "^/api": "" },
+      },
+    },
   },
 };
