@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export default function CopyRights({ siteName }) {
-  return <div className="site-copy-rights">© 2020 {siteName}</div>;
+  return <div className='site-copy-rights p-4-16 br-8'>© 2020 {siteName}</div>;
 }
